@@ -6,9 +6,9 @@ using System.Web.Mvc;
 
 namespace OnlineShopping.Controllers
 {
-    public class demoController : Controller
+    public class BuyerController : Controller
     {
-        // GET: demo
+        // GET: Buyer
         public ActionResult Index()
         {
             return View();
