@@ -28,7 +28,7 @@ namespace OnlineShopping.Models
         public System.DateTime LocationCreatedDate { get; set; }
         public string LocationUpdatedBy { get; set; }
         public System.DateTime LocationUpdatedDate { get; set; }
-        public int LocationIsDeleted { get; set; }
+        public bool LocationIsDeleted { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Service_Table> Service_Table { get; set; }

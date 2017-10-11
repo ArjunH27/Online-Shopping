@@ -27,7 +27,7 @@ namespace OnlineShopping.Models
         public string BaseCatCreatedBy { get; set; }
         public string BaseCatUpdatedBy { get; set; }
         public System.DateTime BaseCatUpdateDate { get; set; }
-        public int BaseCatIsDeleted { get; set; }
+        public bool BaseCatIsDeleted { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ProductCategory_Table> ProductCategory_Table { get; set; }

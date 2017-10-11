@@ -23,11 +23,12 @@ namespace OnlineShopping.Models
         public int ProductCatId { get; set; }
         public int BaseCatid { get; set; }
         public string ProductCatName { get; set; }
+        public string ProductCatDesc { get; set; }
         public System.DateTime ProductCatCreatedDate { get; set; }
         public string ProductCatCreatedBy { get; set; }
         public string ProductCateUpdatedBy { get; set; }
         public System.DateTime ProductCatUpdatedDate { get; set; }
-        public int ProductCatIsDeleted { get; set; }
+        public bool ProductCatIsDeleted { get; set; }
     
         public virtual BaseCategory_Table BaseCategory_Table { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
