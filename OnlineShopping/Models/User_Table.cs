@@ -13,12 +13,12 @@ namespace OnlineShopping.Models
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
 
-    
     public partial class User_Table
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public User_Table()
         {
+            this.Order_Table = new HashSet<Order_Table>();
             this.Product_Table = new HashSet<Product_Table>();
         }
     
@@ -29,9 +29,9 @@ namespace OnlineShopping.Models
         public string FirstName { get; set; }
         [Required]
         public string LastName { get; set; }
-        [Required][EmailAddress]
-        public string UserEmail { get; set; }
         [Required]
+        public string UserEmail { get; set; }
+        [Required][EmailAddress]
         public string UserAddress { get; set; }
         [Required]
         public string UserName { get; set; }
@@ -40,9 +40,10 @@ namespace OnlineShopping.Models
         public string UserCreatedBy { get; set; }
         public System.DateTime UserCreatedDate { get; set; }
         public Nullable<System.DateTime> UserUpdatedDate { get; set; }
-        public int UserIsDeleted { get; set; }
-        [Compare("Password", ErrorMessage = "Confirm password doesn't match, Type again !")]
-        public string ConfirmPassword { get; set; }
+        public bool UserIsDeleted { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Order_Table> Order_Table { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Product_Table> Product_Table { get; set; }
         public virtual Role_Table Role_Table { get; set; }

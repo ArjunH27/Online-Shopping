@@ -17,6 +17,8 @@ namespace OnlineShopping.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Product_Table()
         {
+            this.Image_Table = new HashSet<Image_Table>();
+            this.OrderDetail_Table = new HashSet<OrderDetail_Table>();
             this.Service_Table = new HashSet<Service_Table>();
         }
     
@@ -25,14 +27,18 @@ namespace OnlineShopping.Models
         public int SellerId { get; set; }
         public string ProductName { get; set; }
         public decimal ProductPrice { get; set; }
-        public byte[] ProductDesc { get; set; }
+        public string ProductDesc { get; set; }
         public int ProductStock { get; set; }
         public string ProductCreatedBy { get; set; }
         public System.DateTime ProductCreatedDate { get; set; }
         public string ProductUpdatedBy { get; set; }
         public System.DateTime ProductUpdatedDate { get; set; }
-        public int ProductIsDeleted { get; set; }
+        public bool ProductIsDeleted { get; set; }
     
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Image_Table> Image_Table { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<OrderDetail_Table> OrderDetail_Table { get; set; }
         public virtual ProductCategory_Table ProductCategory_Table { get; set; }
         public virtual User_Table User_Table { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

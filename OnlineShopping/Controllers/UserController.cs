@@ -14,7 +14,7 @@ namespace OnlineShopping.Controllers
         public ActionResult create()
         {
             List<Role_Table> role = new List<Role_Table>();
-            role = db.Role_Table.ToList();
+            role = db.Role_Table.Where(x=>x.RoleIsDeleted==false).ToList();
             var rolelist = new List<SelectListItem>();
             foreach(var item in role)
             { rolelist.Add(new SelectListItem
@@ -36,12 +36,12 @@ namespace OnlineShopping.Controllers
             obj.UserUpdatedDate = System.DateTime.Now;
             if(obj.Roleid==1|| obj.Roleid == 2|| obj.Roleid == 3)
             {
-                obj.UserIsDeleted = 1;
+                obj.UserIsDeleted = true;
             }
             else 
             {
                 obj.UserCreatedBy = obj.UserName;
-                obj.UserIsDeleted = 0;
+                obj.UserIsDeleted = false;
             }
             db.User_Table.Add(obj);
             db.SaveChanges();
@@ -68,20 +68,24 @@ namespace OnlineShopping.Controllers
             {
                 if(obj.Password==password)
                 {
-                    if(obj.Roleid==1 && obj.UserIsDeleted==0)
+                    if(obj.Roleid==1 && obj.UserIsDeleted==false)
                     {
+                        Session["user"] = obj.UserName;
                         return RedirectToAction("Index", "Admin");
                     }
-                    else if(obj.Roleid == 2 && obj.UserIsDeleted == 0)
+                    else if(obj.Roleid == 2 && obj.UserIsDeleted == false)
                     {
+                        Session["user"] = obj.UserName;
                         return RedirectToAction("Index", "Seller");
                     }
-                    else if (obj.Roleid == 3 && obj.UserIsDeleted == 0)
+                    else if (obj.Roleid == 3 && obj.UserIsDeleted == false)
                     {
+                        Session["user"] = obj.UserName;
                         return RedirectToAction("Index", "Service");
                     }
                     else if(obj.Roleid==4)
                     {
+                        Session["user"] = obj.UserName;
                         return RedirectToAction("Index", "Buyer");
                     }
                     else
@@ -99,7 +103,7 @@ namespace OnlineShopping.Controllers
             }
             else
             {
-                eturn View();
+                return View();
             }
             return View();
         }

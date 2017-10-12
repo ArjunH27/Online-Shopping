@@ -14,6 +14,12 @@ namespace OnlineShopping.Models
     
     public partial class Service_Table
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Service_Table()
+        {
+            this.Order_Table = new HashSet<Order_Table>();
+        }
+    
         public int ServiceId { get; set; }
         public int Productid { get; set; }
         public int Locationid { get; set; }
@@ -24,9 +30,11 @@ namespace OnlineShopping.Models
         public System.DateTime ServiceCreatedDate { get; set; }
         public string ServiceUpdatedBy { get; set; }
         public System.DateTime ServiceUpdatedDate { get; set; }
-        public int ServiceIsDeleted { get; set; }
+        public bool ServiceIsDeleted { get; set; }
     
         public virtual Location_Table Location_Table { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Order_Table> Order_Table { get; set; }
         public virtual Product_Table Product_Table { get; set; }
     }
 }

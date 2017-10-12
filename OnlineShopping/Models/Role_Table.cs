@@ -27,7 +27,7 @@ namespace OnlineShopping.Models
         public string RoleCreatedBy { get; set; }
         public string RoleUpdatedBy { get; set; }
         public System.DateTime RoleUpdateDate { get; set; }
-        public int RoleIsDeleted { get; set; }
+        public bool RoleIsDeleted { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<User_Table> User_Table { get; set; }

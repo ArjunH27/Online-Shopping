@@ -1,7 +1,23 @@
-﻿
+﻿@model  IEnumerable<OnlineShopping.Models.BaseCategory_Table>
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "HOME";
+    Layout = "~/Views/Shared/_BuyerLayout.cshtml";
+    WebGrid grid = new WebGrid(Model);
 }
 
-<h2>Index</h2>
 
+
+<div style="margin-left:200px;">
+
+    @grid.GetHtml(columns: new[]{
+   
+     grid.Column(columnName: "BaseCatName", header: " ",format:@<div class="jumbotron">  @item.GetSelectLink(item.BaseCatName.ToString())</div>)
+    }
+    )
+    @if (grid.HasSelection)
+    {
+        var base_cat = (OnlineShopping.Models.BaseCategory_Table)grid.Rows[grid.SelectedIndex].Value;
+        Session["base_cat"] = @base_cat.BaseCatId;
+        Response.Redirect("Product_cat");
+    }
+</div>
