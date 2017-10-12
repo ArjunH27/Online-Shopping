@@ -240,12 +240,10 @@
     <Content Include="Views\User\create.cshtml" />
     <Content Include="Views\User\login.cshtml" />
     <Content Include="Views\User\errror.cshtml" />
-    <Content Include="Views\Buyer\Index.cshtml" />
     <Content Include="Views\Seller\Index.cshtml" />
     <Content Include="Views\Admin\Index.cshtml" />
     <Content Include="Views\Service\Index.cshtml" />
-    <Content Include="Views\Seller\Create.cshtml" />
-    <Content Include="Views\Seller\trial.cshtml" />
+
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

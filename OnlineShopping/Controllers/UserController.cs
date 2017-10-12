@@ -14,7 +14,7 @@ namespace OnlineShopping.Controllers
         public ActionResult create()
         {
             List<Role_Table> role = new List<Role_Table>();
-            role = db.Role_Table.ToList();
+            role = db.Role_Table.Where(x=>x.RoleIsDeleted==false).ToList();
             var rolelist = new List<SelectListItem>();
             foreach(var item in role)
             { rolelist.Add(new SelectListItem
@@ -36,13 +36,12 @@ namespace OnlineShopping.Controllers
             obj.UserUpdatedDate = System.DateTime.Now;
             if(obj.Roleid==1|| obj.Roleid == 2|| obj.Roleid == 3)
             {
-                obj.UserIsDeleted = false;
+
             }
             else 
             {
                 obj.UserCreatedBy = obj.UserName;
-                obj.UserIsDeleted = true;
-            }
+
             db.User_Table.Add(obj);
             db.SaveChanges();
             return RedirectToAction("login");
@@ -67,21 +66,23 @@ namespace OnlineShopping.Controllers
             if(obj!=null)
             {
                 if(obj.Password==password)
-                {
-                    if(obj.Roleid==1 && obj.UserIsDeleted==true)
-                    {
+      {
+                        Session["user"] = obj.UserName;
                         return RedirectToAction("Index", "Admin");
                     }
-                    else if(obj.Roleid == 2 && obj.UserIsDeleted == true)
+
                     {
+                        Session["user"] = obj.UserName;
                         return RedirectToAction("Index", "Seller");
                     }
-                    else if (obj.Roleid == 3 && obj.UserIsDeleted == true)
+
                     {
+                        Session["user"] = obj.UserName;
                         return RedirectToAction("Index", "Service");
                     }
                     else if(obj.Roleid==4)
                     {
+                        Session["user"] = obj.UserName;
                         return RedirectToAction("Index", "Buyer");
                     }
                     else

@@ -79,7 +79,7 @@
           <Property Name="SellerId" Type="int" Nullable="false" />
           <Property Name="ProductName" Type="varchar" MaxLength="100" Nullable="false" />
           <Property Name="ProductPrice" Type="money" Nullable="false" />
-          <Property Name="ProductDesc" Type="varchar" MaxLength="200" Nullable="false" />
+
           <Property Name="ProductStock" Type="int" Nullable="false" />
           <Property Name="ProductCreatedBy" Type="varchar" MaxLength="100" Nullable="false" />
           <Property Name="ProductCreatedDate" Type="date" Nullable="false" />
@@ -422,7 +422,7 @@
           <Property Name="SellerId" Type="Int32" Nullable="false" />
           <Property Name="ProductName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="ProductPrice" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
-          <Property Name="ProductDesc" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+
           <Property Name="ProductStock" Type="Int32" Nullable="false" />
           <Property Name="ProductCreatedBy" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="ProductCreatedDate" Type="DateTime" Nullable="false" Precision="0" />

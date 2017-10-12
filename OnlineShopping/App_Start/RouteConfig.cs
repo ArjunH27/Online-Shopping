@@ -16,7 +16,7 @@ namespace OnlineShopping
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "User", action = "create", id = UrlParameter.Optional }
+                defaults: new { controller = "User", action = "login", id = UrlParameter.Optional }
             );
         }
     }
