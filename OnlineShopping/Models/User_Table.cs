@@ -11,7 +11,6 @@ namespace OnlineShopping.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
 
     public partial class User_Table
     {
@@ -23,19 +22,12 @@ namespace OnlineShopping.Models
         }
     
         public int UserId { get; set; }
-        [Required]
         public int Roleid { get; set; }
-        [Required]
         public string FirstName { get; set; }
-        [Required]
         public string LastName { get; set; }
-        [Required]
-        public string UserEmail { get; set; }
-        [Required][EmailAddress]
+
         public string UserAddress { get; set; }
-        [Required]
         public string UserName { get; set; }
-        [Required]
         public string Password { get; set; }
         public string UserCreatedBy { get; set; }
         public System.DateTime UserCreatedDate { get; set; }

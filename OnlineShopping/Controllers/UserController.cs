@@ -36,13 +36,12 @@ namespace OnlineShopping.Controllers
             obj.UserUpdatedDate = System.DateTime.Now;
             if(obj.Roleid==1|| obj.Roleid == 2|| obj.Roleid == 3)
             {
-                obj.UserIsDeleted = true;
+
             }
             else 
             {
                 obj.UserCreatedBy = obj.UserName;
-                obj.UserIsDeleted = false;
-            }
+
             db.User_Table.Add(obj);
             db.SaveChanges();
             return RedirectToAction("login");
@@ -67,18 +66,16 @@ namespace OnlineShopping.Controllers
             if(obj!=null)
             {
                 if(obj.Password==password)
-                {
-                    if(obj.Roleid==1 && obj.UserIsDeleted==false)
-                    {
+      {
                         Session["user"] = obj.UserName;
                         return RedirectToAction("Index", "Admin");
                     }
-                    else if(obj.Roleid == 2 && obj.UserIsDeleted == false)
+
                     {
                         Session["user"] = obj.UserName;
                         return RedirectToAction("Index", "Seller");
                     }
-                    else if (obj.Roleid == 3 && obj.UserIsDeleted == false)
+
                     {
                         Session["user"] = obj.UserName;
                         return RedirectToAction("Index", "Service");
@@ -105,7 +102,9 @@ namespace OnlineShopping.Controllers
             {
                 return View();
             }
-            return View();
+
+
+            //return View();
         }
 
 

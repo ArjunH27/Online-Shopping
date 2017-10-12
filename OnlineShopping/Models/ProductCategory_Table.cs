@@ -23,6 +23,7 @@ namespace OnlineShopping.Models
         public int ProductCatId { get; set; }
         public int BaseCatid { get; set; }
         public string ProductCatName { get; set; }
+        public string ProductCatDesc { get; set; }
         public System.DateTime ProductCatCreatedDate { get; set; }
         public string ProductCatCreatedBy { get; set; }
         public string ProductCateUpdatedBy { get; set; }

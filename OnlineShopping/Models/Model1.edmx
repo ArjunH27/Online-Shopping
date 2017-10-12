@@ -79,7 +79,7 @@
           <Property Name="SellerId" Type="int" Nullable="false" />
           <Property Name="ProductName" Type="varchar" MaxLength="100" Nullable="false" />
           <Property Name="ProductPrice" Type="money" Nullable="false" />
-          <Property Name="ProductDesc" Type="varchar" MaxLength="500" Nullable="false" />
+
           <Property Name="ProductStock" Type="int" Nullable="false" />
           <Property Name="ProductCreatedBy" Type="varchar" MaxLength="100" Nullable="false" />
           <Property Name="ProductCreatedDate" Type="date" Nullable="false" />
@@ -94,6 +94,7 @@
           <Property Name="ProductCatId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="BaseCatid" Type="int" Nullable="false" />
           <Property Name="ProductCatName" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="ProductCatDesc" Type="varchar" MaxLength="200" Nullable="false" />
           <Property Name="ProductCatCreatedDate" Type="date" Nullable="false" />
           <Property Name="ProductCatCreatedBy" Type="varchar" MaxLength="100" Nullable="false" />
           <Property Name="ProductCateUpdatedBy" Type="varchar" MaxLength="100" Nullable="false" />
@@ -421,7 +422,7 @@
           <Property Name="SellerId" Type="Int32" Nullable="false" />
           <Property Name="ProductName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="ProductPrice" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
-          <Property Name="ProductDesc" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+
           <Property Name="ProductStock" Type="Int32" Nullable="false" />
           <Property Name="ProductCreatedBy" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="ProductCreatedDate" Type="DateTime" Nullable="false" Precision="0" />
@@ -441,6 +442,7 @@
           <Property Name="ProductCatId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="BaseCatid" Type="Int32" Nullable="false" />
           <Property Name="ProductCatName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ProductCatDesc" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="ProductCatCreatedDate" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="ProductCatCreatedBy" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="ProductCateUpdatedBy" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
@@ -790,6 +792,7 @@
                 <ScalarProperty Name="ProductCatId" ColumnName="ProductCatId" />
                 <ScalarProperty Name="BaseCatid" ColumnName="BaseCatid" />
                 <ScalarProperty Name="ProductCatName" ColumnName="ProductCatName" />
+                <ScalarProperty Name="ProductCatDesc" ColumnName="ProductCatDesc" />
                 <ScalarProperty Name="ProductCatCreatedDate" ColumnName="ProductCatCreatedDate" />
                 <ScalarProperty Name="ProductCatCreatedBy" ColumnName="ProductCatCreatedBy" />
                 <ScalarProperty Name="ProductCateUpdatedBy" ColumnName="ProductCateUpdatedBy" />
